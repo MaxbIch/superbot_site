@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SuperBot — ваш помощник в Нячанге. Аренда транспорта, жильё, обмен валют, визараны и туры.">
+    <title>SuperBot — Ваш помощник в Нячанге</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header" id="top">
+    <div class="container header__inner">
+        <a href="#top" class="logo">
+            <span class="logo__icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="8" fill="#4CAF7A"/>
+                    <path d="M10 22V10h3.2l3.4 8.2L20 10h3v12h-2.6v-7.1L17.4 22h-1.8l-3-7.1V22H10z" fill="#fff"/>
+                </svg>
+            </span>
+            <span class="logo__text">SuperBot</span>
+        </a>
+
+        <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="nav-menu">
+            <ul class="nav__list">
+                <li><a href="#top" class="nav__link">Главная</a></li>
+                <li><a href="#bikes" class="nav__link">Байки &amp; Авто</a></li>
+                <li><a href="#exchange" class="nav__link">Обмен валют</a></li>
+                <li><a href="#housing" class="nav__link">Жильё</a></li>
+                <li><a href="#visaran" class="nav__link">Визараны</a></li>
+                <li><a href="#tours" class="nav__link">Туры</a></li>
+                <li><a href="#bot" class="nav__link">Бот</a></li>
+            </ul>
+            <a href="https://t.me/" class="btn btn--telegram nav__telegram" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                </svg>
+                Telegram Bot
+            </a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <h1 class="hero__title">Ваш помощник<br>в Нячанге</h1>
+                <p class="hero__subtitle">Аренда транспорта, жильё, обмен валют, визараны и туры. Всё в одном месте. Быстро, удобно и надёжно.</p>
+
+                <div class="services-grid">
+                    <a href="#bikes" class="service-card">
+                        <span class="service-card__icon">🏍️</span>
+                        <span class="service-card__title">Байки &amp; Авто</span>
+                        <span class="service-card__desc">Аренда байков и автомобилей по лучшим ценам</span>
+                    </a>
+                    <a href="#housing" class="service-card">
+                        <span class="service-card__icon">🏠</span>
+                        <span class="service-card__title">Жильё</span>
+                        <span class="service-card__desc">Квартиры, виллы и отели на любой вкус</span>
+                    </a>
+                    <a href="#exchange" class="service-card">
+                        <span class="service-card__icon">💱</span>
+                        <span class="service-card__title">Обмен валют</span>
+                        <span class="service-card__desc">Актуальные курсы и выгодный обмен</span>
+                    </a>
+                    <a href="#visaran" class="service-card">
+                        <span class="service-card__icon">🛂</span>
+                        <span class="service-card__title">Визараны</span>
+                        <span class="service-card__desc">Поездки в соседние страны без лишних хлопот</span>
+                    </a>
+                    <a href="#tours" class="service-card">
+                        <span class="service-card__icon">🌴</span>
+                        <span class="service-card__title">Туры</span>
+                        <span class="service-card__desc">Экскурсии, острова и развлечения</span>
+                    </a>
+                    <a href="#bot" class="service-card service-card--accent">
+                        <span class="service-card__icon">🤖</span>
+                        <span class="service-card__title">Telegram бот</span>
+                        <span class="service-card__desc">Вся актуальная информация в одном месте</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero__visual" aria-hidden="true">
+                <div class="hero-collage">
+                    <div class="hero-collage__item hero-collage__item--1">
+                        <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=400&h=300&fit=crop" alt="">
+                    </div>
+                    <div class="hero-collage__item hero-collage__item--2">
+                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=300&fit=crop" alt="">
+                    </div>
+                    <div class="hero-collage__item hero-collage__item--3">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=300&fit=crop" alt="">
+                    </div>
+                    <div class="hero-collage__item hero-collage__item--4">
+                        <img src="https://images.unsplash.com/photo-1554224311-beee415c201f?w=400&h=300&fit=crop" alt="">
+                    </div>
+                    <div class="hero-collage__item hero-collage__item--5">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop" alt="">
+                    </div>
+                    <div class="hero-collage__mascot">
+                        <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="60" cy="125" rx="35" ry="8" fill="#000" opacity="0.1"/>
+                            <rect x="35" y="70" width="50" height="45" rx="12" fill="#4CAF7A"/>
+                            <rect x="42" y="78" width="36" height="28" rx="6" fill="#3d9a68"/>
+                            <circle cx="52" cy="90" r="5" fill="#fff"/>
+                            <circle cx="68" cy="90" r="5" fill="#fff"/>
+                            <circle cx="53" cy="90" r="2" fill="#1a1a1a"/>
+                            <circle cx="69" cy="90" r="2" fill="#1a1a1a"/>
+                            <path d="M52 100 Q60 106 68 100" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <rect x="48" y="55" width="24" height="20" rx="6" fill="#4CAF7A"/>
+                            <circle cx="60" cy="48" r="22" fill="#5ec98f"/>
+                            <circle cx="54" cy="46" r="4" fill="#fff"/>
+                            <circle cx="66" cy="46" r="4" fill="#fff"/>
+                            <circle cx="55" cy="46" r="1.5" fill="#1a1a1a"/>
+                            <circle cx="67" cy="46" r="1.5" fill="#1a1a1a"/>
+                            <path d="M48 30 L60 18 L72 30 L68 32 L60 24 L52 32 Z" fill="#e8c547"/>
+                            <path d="M60 18 L60 10" stroke="#c9a832" stroke-width="2"/>
+                            <rect x="25" y="82" width="12" height="8" rx="4" fill="#4CAF7A"/>
+                            <rect x="83" y="82" width="12" height="8" rx="4" fill="#4CAF7A"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="bikes">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Байки и Автомобили</h2>
+                <a href="https://t.me/" class="section__more" target="_blank" rel="noopener noreferrer">Подробнее <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="cards-grid">
+                <article class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&h=400&fit=crop" alt="Kymco Candi Hi 50" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Kymco Candi Hi 50</h3>
+                        <p class="product-card__desc">Компактный и экономичный скутер, идеален для города и ежедневных поездок.</p>
+                        <p class="product-card__price">от 150.000 ₫</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://images.unsplash.com/photo-1609630875171-b1326919ac9f?w=600&h=400&fit=crop" alt="Yamaha NVX 155" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Yamaha NVX 155</h3>
+                        <p class="product-card__desc">Мощный спортивный скутер с динамичным дизайном, отличной тягой и комфортом.</p>
+                        <p class="product-card__price">от 250.000 ₫</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600&h=400&fit=crop" alt="Hyundai Creta" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Hyundai Creta</h3>
+                        <p class="product-card__desc">Современный городской кроссовер с просторным салоном и комфортом для всей семьи.</p>
+                        <p class="product-card__price">от 750.000 ₫</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--map" id="places">
+        <div class="container">
+            <h2 class="section__title section__title--center">Лучшие места Nha Trang</h2>
+
+            <div class="map-filters" role="tablist" aria-label="Категории мест">
+                <button class="map-filter is-active" type="button" role="tab" aria-selected="true" data-category="food">
+                    <span class="map-filter__icon" aria-hidden="true">🍜</span> Еда
+                </button>
+                <button class="map-filter" type="button" role="tab" aria-selected="false" data-category="sport">
+                    <span class="map-filter__icon" aria-hidden="true">⚽</span> Спорт
+                </button>
+                <button class="map-filter" type="button" role="tab" aria-selected="false" data-category="beach">
+                    <span class="map-filter__icon" aria-hidden="true">🏖️</span> Пляжи
+                </button>
+                <button class="map-filter" type="button" role="tab" aria-selected="false" data-category="mountains">
+                    <span class="map-filter__icon" aria-hidden="true">⛰️</span> Горы
+                </button>
+                <button class="map-filter" type="button" role="tab" aria-selected="false" data-category="attractions">
+                    <span class="map-filter__icon" aria-hidden="true">🏛️</span> Достопримечательности
+                </button>
+            </div>
+
+            <div class="map-layout">
+                <div class="map-wrapper">
+                    <div id="places-map" aria-label="Карта мест Нячанга"></div>
+                </div>
+                <aside class="places-list" id="places-list" aria-label="Список мест"></aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="housing">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Жильё</h2>
+                <a href="https://t.me/" class="section__more" target="_blank" rel="noopener noreferrer">Подробнее <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="cards-grid">
+                <article class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=400&fit=crop" alt="Апартаменты" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Апартаменты</h3>
+                        <p class="product-card__desc">Отличная комната в центре около отеля December!</p>
+                        <p class="product-card__price">4.500.000 ₫</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600&h=400&fit=crop" alt="Вилла" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Вилла</h3>
+                        <p class="product-card__desc">Большая вилла, 260 м², бассейн, двор, парковка. 3 этажа.</p>
+                        <p class="product-card__price">от 22.500.000 ₫</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&h=400&fit=crop" alt="Квартира" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Квартира</h3>
+                        <p class="product-card__desc">Абсолютно новая квартира, чистая, современная техника. 2 комнаты.</p>
+                        <p class="product-card__price">от 11.500.000 ₫</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="tours">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Туры</h2>
+                <a href="https://t.me/" class="section__more" target="_blank" rel="noopener noreferrer">Подробнее <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="cards-grid">
+                <article class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://images.unsplash.com/photo-1559592413-7cec4d0c3f82?w=600&h=400&fit=crop" alt="Bà Nà Hills" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">«Bà Nà Hills» Золотой мост — Руки Бога</h3>
+                        <p class="product-card__desc">Группа от 3 чел и более. 1 день.</p>
+                        <p class="product-card__price">3.500.000 ₫</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://images.unsplash.com/photo-1569163139394-de4798aa62b6?w=600&h=400&fit=crop" alt="Далат" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Далат «Душа Далата»</h3>
+                        <p class="product-card__desc">Группа от 9 чел до 13 человек.</p>
+                        <p class="product-card__price">от 1.500.000 ₫</p>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="product-card__image">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop" alt="Vinpearl" loading="lazy">
+                    </div>
+                    <div class="product-card__body">
+                        <h3 class="product-card__title">Vinpearl</h3>
+                        <p class="product-card__desc">От 1-го человека.</p>
+                        <p class="product-card__price">от 3.100.000 ₫</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--visaran" id="visaran">
+        <div class="container">
+            <div class="visaran-banner">
+                <div class="visaran-banner__content">
+                    <h2 class="visaran-banner__title">Визараны</h2>
+                    <p class="visaran-banner__text">Организуем поездки в Камбоджу, Лаос и Таиланд для продления визы. Без лишних хлопот — всё включено: трансфер, граница, обратный путь.</p>
+                    <a href="https://t.me/" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Узнать расписание</a>
+                </div>
+                <div class="visaran-banner__icon" aria-hidden="true">🛂</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--exchange" id="exchange">
+        <div class="container">
+            <h2 class="section__title section__title--center">Калькулятор обмена</h2>
+            <form class="exchange-calculator" id="exchange-form">
+                <div class="exchange-calculator__field">
+                    <label for="currency-from">Валюта</label>
+                    <select id="currency-from" name="currency-from">
+                        <option value="RUB">RUB — Российский рубль</option>
+                        <option value="USD">USD — Доллар США</option>
+                        <option value="EUR">EUR — Евро</option>
+                        <option value="CNY">CNY — Китайский юань</option>
+                    </select>
+                </div>
+                <div class="exchange-calculator__field">
+                    <label for="amount">Сумма</label>
+                    <input type="number" id="amount" name="amount" min="0" step="0.01" placeholder="1000" value="1000">
+                </div>
+                <div class="exchange-calculator__arrow" aria-hidden="true">→</div>
+                <div class="exchange-calculator__field exchange-calculator__field--result">
+                    <label for="result">Результат (VND)</label>
+                    <output id="result" class="exchange-calculator__output" for="amount currency-from">0 ₫</output>
+                </div>
+                <button type="submit" class="btn btn--primary">Рассчитать</button>
+            </form>
+            <p class="exchange-note">* Курсы ориентировочные. Актуальный курс уточняйте в Telegram-боте.</p>
+        </div>
+    </section>
+
+    <section class="section section--bot" id="bot">
+        <div class="container">
+            <div class="bot-banner">
+                <div class="bot-banner__content">
+                    <h2 class="bot-banner__title">Telegram бот SuperBot</h2>
+                    <p class="bot-banner__text">Актуальные цены, бронирование, курсы валют и ответы на вопросы — прямо в мессенджере. Быстро и удобно.</p>
+                </div>
+                <a href="https://t.me/" class="btn btn--telegram btn--large" target="_blank" rel="noopener noreferrer">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+                    </svg>
+                    Открыть бот
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container footer__inner">
+        <div class="footer__col footer__col--brand">
+            <a href="#top" class="logo logo--footer">
+                <span class="logo__icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="#4CAF7A"/>
+                        <path d="M10 22V10h3.2l3.4 8.2L20 10h3v12h-2.6v-7.1L17.4 22h-1.8l-3-7.1V22H10z" fill="#fff"/>
+                    </svg>
+                </span>
+                <span class="logo__text">SuperBot</span>
+            </a>
+            <p class="footer__about">Ваш надёжный помощник в Нячанге. Аренда, жильё, туры и обмен валют — всё в одном месте.</p>
+        </div>
+        <div class="footer__col">
+            <h3 class="footer__title">Услуги</h3>
+            <ul class="footer__links">
+                <li><a href="#bikes">Байки &amp; Авто</a></li>
+                <li><a href="#housing">Жильё</a></li>
+                <li><a href="#exchange">Обмен валют</a></li>
+                <li><a href="#visaran">Визараны</a></li>
+                <li><a href="#tours">Туры</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <h3 class="footer__title">Контакты</h3>
+            <ul class="footer__links">
+                <li><a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+                <li><a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <h3 class="footer__title">Информация</h3>
+            <ul class="footer__links">
+                <li><a href="#">Политика конфиденциальности</a></li>
+                <li><a href="#">Условия использования</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="container">
+            <p>&copy; 2026 SuperBot. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
