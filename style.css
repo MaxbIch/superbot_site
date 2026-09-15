@@ -596,59 +596,93 @@ select {
     line-height: 1.4;
 }
 
-.leaflet-popup-content-wrapper {
-    border-radius: 12px;
+/* ===== Housing / Visaran / Tours / Bot ===== */
+.housing-grid,
+.visaran-grid,
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-.leaflet-popup-content {
-    margin: 12px 14px;
-    font-family: 'Montserrat', sans-serif;
+.housing-card,
+.visaran-card,
+.tour-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.map-marker {
-    width: 32px;
-    height: 32px;
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    border: 3px solid #fff;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+.housing-card__image,
+.tour-card__image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #f0f0f0;
 }
 
-.map-marker--food { background: #e85d4c; }
-.map-marker--sport { background: #3b82f6; }
-.map-marker--beach { background: #f59e0b; }
-.map-marker--mountains { background: #8b5cf6; }
-.map-marker--attractions { background: #4CAF7A; }
+.housing-card__image img,
+.tour-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-/* ===== Visaran Banner ===== */
+.housing-card__body,
+.visaran-card__body,
+.tour-card__body {
+    padding: 20px;
+}
+
+.housing-card__title,
+.visaran-card__title,
+.tour-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.housing-card__desc,
+.visaran-card__desc,
+.tour-card__desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.housing-card__price,
+.tour-card__price {
+    margin-top: 14px;
+    color: #4CAF7A;
+    font-weight: 700;
+}
+
 .visaran-banner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 32px;
-    padding: 40px 48px;
-    background: linear-gradient(135deg, #e8f8ef 0%, #f5f7f6 100%);
+    padding: 48px;
+    background: #f5f7f6;
     border-radius: 24px;
-    border: 1px solid rgba(76, 175, 122, 0.2);
+}
+
+.visaran-banner__text {
+    max-width: 640px;
 }
 
 .visaran-banner__title {
     font-size: 28px;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
-.visaran-banner__text {
-    color: #555;
-    margin-bottom: 20px;
-    max-width: 560px;
-    line-height: 1.6;
+.visaran-banner__desc {
+    color: #666;
 }
 
 .visaran-banner__icon {
     font-size: 72px;
-    flex-shrink: 0;
-    opacity: 0.8;
 }
 
 /* ===== Exchange Calculator ===== */
@@ -977,5 +1011,35 @@ select {
 
     .bot-banner .btn--telegram {
         width: 100%;
+    }
+}
+
+/* ===== Final layout fixes ===== */
+/* Keep the exchange calculator centered and make all generated children use the full card width. */
+.exchange-calculator {
+    width: 100% !important;
+    max-width: 760px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    align-items: stretch !important;
+    flex-wrap: nowrap !important;
+}
+
+/* The map must align exactly with the main content container, not 70vw. */
+.places-map-shell {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+@media (max-width: 800px) {
+    .exchange-calculator {
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .places-map-shell {
+        width: 100% !important;
     }
 }
