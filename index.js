@@ -1,6 +1,23 @@
 (function () {
     'use strict';
 
+    var BOT_URL = 'https://t.me/nha_trang_superbot';
+
+    document.addEventListener('click', function (e) {
+        var link = e.target.closest('a');
+        if (!link) return;
+
+        var href = link.getAttribute('href');
+        if (href === 'https://t.me/' || href === 'https://t.me') {
+            e.preventDefault();
+            window.open(BOT_URL, '_blank', 'noopener,noreferrer');
+        }
+    });
+})();
+
+(function () {
+    'use strict';
+
     var RATES = {
         RUB: 285,
         USD: 25400,
