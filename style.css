@@ -3,3 +3,21 @@
 
 /* ===== SuperBot map width fix ===== */
 #places .map-layout{display:block !important;width:100%}#places .map-wrapper{width:100%;min-height:0;border:0;box-shadow:none;overflow:visible}#places .places-map-shell{width:100% !important;max-width:none !important;margin:0 auto}#places .places-map-main{min-width:0}@media (max-width:800px){#places .places-map-shell{width:100% !important}}
+
+/* ===== SuperBot layout repair ===== */
+#places-map{height:auto !important;min-height:0 !important}
+#places .map-wrapper{height:auto !important;min-height:0 !important;overflow:visible !important}
+#housing{display:block !important;visibility:visible !important;position:relative;z-index:1}
+#housing .container{width:100% !important}
+#housing .cards-grid{width:100%;max-width:none}
+#tours .container{width:100%;max-width:1100px;margin-left:auto;margin-right:auto}
+#tours .tour-mini-grid{width:100%;max-width:1020px;margin-left:auto;margin-right:auto}
+#tours .tour-mini-card{min-width:0}
+@media (max-width:1050px){
+  #tours .container{max-width:1000px}
+  #tours .tour-mini-grid{max-width:940px}
+}
+@media (max-width:800px){
+  #tours .container{max-width:none}
+  #tours .tour-mini-grid{max-width:none}
+}
