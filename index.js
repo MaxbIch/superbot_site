@@ -8,10 +8,10 @@ ui.textContent=''+
 'body.menu-open{overflow:hidden}'+
 '}'+
 '@media(max-width:480px){'+
-'.services-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}'+
+'.services-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important;overflow:hidden!important}'+
 '.service-card{aspect-ratio:1/1!important;min-height:0!important;padding:8px!important;border-radius:12px!important;gap:3px!important;justify-content:center!important;overflow:hidden!important}'+
 '.service-card__icon{font-size:21px!important;line-height:1!important}'+
-'.service-card__title{font-size:10px!important;line-height:1.15!important;text-align:center!important}'+
+'.service-card__title{font-size:10px!important;line-height:1.15!important;text-align:center!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;max-width:100%!important}'+
 '.service-card__desc{font-size:8px!important;line-height:1.2!important;text-align:center!important;display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:2!important;overflow:hidden!important}'+
 '}';
 document.head.appendChild(ui);
