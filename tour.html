@@ -41,7 +41,12 @@
             ['https://d2mgzmtdeipcjp.cloudfront.net/files/magazine/2025/03/11/17416793147938.png','VinWonders с высоты'],
             ['https://images.trvl-media.com/lodging/10000000/9770000/9762000/9761937/b421848d.jpg?impolicy=resizecrop&ra=fill&rh=575&rw=575','Аквапарк VinWonders'],
             ['https://cdn.tcdulichtphcm.vn/upload/1-2026/images/2026-03-06/Cap-treo-Vinpearl-Nha-Trang-lot-Top-cap-treo-dep-nhat-chau-a-2--1--1772801831-995-width1536height1024.jpg','Канатная дорога Vinpearl']
-        ],program:['Канатная дорога над заливом','Аквапарк','Аттракционы','Остров Хон Тре','Парковые зоны','Развлекательные программы'],included:['Канатная дорога','Доступ в VinWonders','Аквапарк','Аттракционы']}
+        ],program:['Канатная дорога над заливом','Аквапарк','Аттракционы','Остров Хон Тре','Парковые зоны','Развлекательные программы'],included:['Канатная дорога','Доступ в VinWonders','Аквапарк','Аттракционы']},
+        islands:{title:'4 острова',location:'Острова Нячанга и море',lead:'Морская прогулка по островам Нячанга с купанием, снорклингом и отдыхом на побережье.',price:'Стоимость уточняется в боте',time:'08:00 — около 16:30',type:'Морская экскурсия',images:[
+            ['https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=800&fit=crop','Море и острова Нячанга'],
+            ['https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=800&fit=crop','Снорклинг'],
+            ['https://images.unsplash.com/photo-1540202404-a2f29016b523?w=1200&h=800&fit=crop','Остров и пляж']
+        ],program:['Морская прогулка по заливу','Остановки на островах','Купание в море','Снорклинг','Отдых на пляже','Обед на маршруте'],included:['Трансфер','Лодка','Снаряжение для снорклинга','Обед','Вода']}
     };
     var key=new URLSearchParams(location.search).get('tour')||'dalat', tour=TOURS[key], root=document.getElementById('tour-root');
     if(!tour){root.innerHTML='<div class="tour-error"><h1>Тур не найден</h1><p>Вернитесь к списку туров.</p><a href="index.html#tours">Вернуться к турам</a></div>';return;}
