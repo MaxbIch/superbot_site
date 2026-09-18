@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var BOT_URL = 'https://t.me/nha_trang_superbot';
+    var BOT_URL = 'https://t.me/nha_trang_superbotnha_trang_superbot';
     var SHEET_URL = 'https://docs.google.com/spreadsheets/d/1KWOuNVMAy3ol_zp7Kiv_dJq7rm_EHVYNm_Ns5hZZyzc/gviz/tq?tqx=out:csv';
     var GOOGLE_MY_MAPS_EMBED = 'https://www.google.com/maps/d/embed?mid=17oh3u9sXAAYX6wyM7eVKwQlqjim7NQ4';
     var CURRENCIES = {RUB: {flag: '🇷🇺'}, USD: {flag: '🇺🇸'}, EUR: {flag: '🇪🇺'}, USDT: {flag: '💵'}, VND: {flag: '🇻🇳'}};
@@ -220,7 +220,7 @@
             text: 'Морская прогулка по островам, купание, снорклинг и отдых на побережье.'
         }];
         section.innerHTML = '<div class="section__title__tour"><h2 class="section__title__tourh2">Туры</h2>\n' +
-            '                <a href="https://t.me/" class="section__more section__title__toura" target="_blank" rel="noopener noreferrer">Подробнее <span aria-hidden="true">→</span></a></div><div class="tour-mini-grid">' + tours.map(function (t) {
+            '                <a href="https://t.me/nha_trang_superbot" class="section__more section__title__toura" target="_blank" rel="noopener noreferrer">Подробнее <span aria-hidden="true">→</span></a></div><div class="tour-mini-grid">' + tours.map(function (t) {
             return '<a class="tour-mini-card" href="tour.html?tour=' + encodeURIComponent(t.id) + '"><span class="tour-mini-card__image"><img src="' + t.image + '" alt="' + t.title + '" loading="lazy"></span><span class="tour-mini-card__body"><strong>' + t.title + '</strong><span>' + t.location + '</span><small>' + t.text + '</small><em>Подробнее →</em></span></a>'
         }).join('') + '</div>'
     }
