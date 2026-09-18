@@ -9,4 +9,12 @@
   };
   originalScript.onerror = function () { console.error('SuperBot app script failed to load'); };
   document.head.appendChild(originalScript);
+
+  function removeHashFromUrl() {
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }
+  window.addEventListener('hashchange', removeHashFromUrl);
+  removeHashFromUrl();
 })();
