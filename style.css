@@ -618,11 +618,9 @@ button, input, select {
 }
 
 .visaran-banner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: block;
     gap: 32px;
-    padding: 40px 48px;
+    padding: 20px;
     background: linear-gradient(135deg, #e8f8ef 0%, #f5f7f6 100%);
     border-radius: 24px;
     border: 1px solid rgba(76, 175, 122, .2)
@@ -630,14 +628,28 @@ button, input, select {
 
 .visaran-banner__title {
     font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 12px
+    padding: 10px 0 20px;
+}
+.visa-media {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+.visaran-banner__text-header {
+    margin: 0;
+}
+.visa-img {
+    max-height: 170px;
+    border-radius: 20px;
 }
 
 .visaran-banner__text {
     color: #555;
-    margin-bottom: 20px;
-    max-width: 560px;
+    padding: 20px 0;
     line-height: 1.6
 }
 
@@ -873,13 +885,13 @@ button, input, select {
     }
 
     .section {
-        padding: 48px 0
+        padding: 20px 0;
+    }
+    .section__title-avto {
+        font-size: 20px;
     }
 
-    .section__header {
-        flex-direction: column;
-        align-items: flex-start
-    }
+
 
     .cards-grid {
         grid-template-columns:1fr;
@@ -1061,6 +1073,8 @@ button, input, select {
 }
 
 
+
+
 @media (max-width: 1050px) {
     #tours .container {
         max-width: 1000px
@@ -1174,5 +1188,12 @@ button, input, select {
 
     body.menu-open {
         overflow: hidden;
+    }
+    .section__header, .section__title__tour {
+        margin-bottom: 10px;
+    }
+    .section__title--center {
+        text-align: center;
+        margin-bottom: 10px;
     }
 }
