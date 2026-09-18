@@ -374,7 +374,7 @@
                 included: ['Трансфер', 'Лодка', 'Снаряжение для снорклинга', 'Обед', 'Вода']
             }
         };
-        var key = new URLSearchParams(location.search).get('tour') || 'dalat', tour = TOURS[key],
+        var key = 'dalat', tour = TOURS[key],
             root = document.getElementById('tour-root');
         if (!tour) {
             root.innerHTML = '<div class="tour-error"><h1>Тур не найден</h1><p>Вернитесь к списку туров.</p><a href="index.html#tours">Вернуться к турам</a></div>';
