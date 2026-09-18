@@ -266,22 +266,17 @@ button, input, select {
 .hero__visual {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-width: 0
+    align-items: center
 }
 
 .hero__image {
     display: block;
     width: 100%;
     max-width: 540px;
-    max-height: 680px;
     height: auto;
     object-fit: contain;
     border-radius: 24px;
     filter: drop-shadow(0 18px 34px rgba(0, 0, 0, .12))
-}
-
-
 }
 
 .section {
@@ -759,7 +754,6 @@ button, input, select {
 
     .hero__image {
         max-width: 440px;
-        max-height: 620px;
         margin: 0 auto
     }
 
