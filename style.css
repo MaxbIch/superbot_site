@@ -110,10 +110,11 @@ button, input, select {
     flex-shrink: 0
 }
 
-.logo__icon svg {
-    width: 36px;
-    height: 36px;
-    display: block
+.logo__icon img {
+    width: 42px;
+    height: 42px;
+    display: block;
+    object-fit: contain
 }
 
 .logo--footer .logo__text {
