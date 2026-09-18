@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    var BOT_URL = 'https://t.me/nha_trang_superbotnha_trang_superbot';
+    var BOT_URL = 'https://t.me/nha_trang_superbot';
     var SHEET_URL = 'https://docs.google.com/spreadsheets/d/1KWOuNVMAy3ol_zp7Kiv_dJq7rm_EHVYNm_Ns5hZZyzc/gviz/tq?tqx=out:csv';
     var GOOGLE_MY_MAPS_EMBED = 'https://www.google.com/maps/d/embed?mid=17oh3u9sXAAYX6wyM7eVKwQlqjim7NQ4';
     var CURRENCIES = {RUB: {flag: '🇷🇺'}, USD: {flag: '🇺🇸'}, EUR: {flag: '🇪🇺'}, USDT: {flag: '💵'}, VND: {flag: '🇻🇳'}};
